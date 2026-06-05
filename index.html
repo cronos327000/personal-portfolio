@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Charan | Portfolio</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Portfolio of Sri Charan, class 11 scholar at Rockwell International, badminton captain, and aspiring AI entrepreneur.">
+    <meta name="keywords" content="Sri Charan, Sri Charan Pabbati, Rockwell International, Badminton Captain, AI Entrepreneur, High School Portfolio">
+    <meta name="author" content="Sri Charan">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Canvas for flowing silk simulation -->
+    <canvas id="silk-canvas"></canvas>
+
+    <!-- Custom Premium Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">S<span class="gold-text">C</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#hobbies" class="nav-link">Hobbies</a>
+                <a href="#ambition" class="nav-link">Ambition</a>
+                <a href="#contact" class="nav-link nav-btn">Get In Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="content-wrapper">
+        
+        <!-- Hero Section -->
+        <section id="about" class="section hero-section">
+            <div class="container hero-container">
+                <div class="hero-tag reveal">Rockwell International School</div>
+                <h1 class="hero-title reveal reveal-delay-1">
+                    Sri <span class="gold-text-gradient">Charan</span>
+                </h1>
+                <p class="hero-subtitle reveal reveal-delay-2">
+                    High School Scholar <span class="divider">•</span> Badminton Captain <span class="divider">•</span> Aspiring AI Entrepreneur
+                </p>
+                <p class="hero-description reveal reveal-delay-3">
+                    Currently in Class 11, designing systems at the intersection of business, competitive sports, and artificial intelligence. Driven by a mindset of logic, high performance, and relentless execution.
+                </p>
+                <div class="hero-actions reveal reveal-delay-4">
+                    <a href="#contact" class="btn btn-primary">Connect</a>
+                    <a href="#ambition" class="btn btn-secondary">Read Ambition</a>
+                </div>
+                <div class="scroll-indicator reveal reveal-delay-5">
+                    <span class="scroll-line"></span>
+                    <span class="scroll-text">Scroll Down</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-num">01</span>
+                    <h2 class="section-title">Education</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="education-grid">
+                    <div class="education-card reveal">
+                        <div class="card-border-glow"></div>
+                        <span class="card-duration">Current Academic Year</span>
+                        <h3 class="card-title">Class 11</h3>
+                        <p class="card-institution">Rockwell International School</p>
+                        <p class="card-desc">
+                            Pursuing a rigorous academic path specializing in sciences and mathematics. Blending core curriculum standards with advanced self-driven studies in computer science and technology architectures.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="section hobbies-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-num">02</span>
+                    <h2 class="section-title">Hobbies & Interests</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="hobbies-grid">
+                    <div class="hobby-card reveal reveal-delay-1">
+                        <div class="card-border-glow"></div>
+                        <div class="hobby-icon">
+                            <!-- Badminton SVG Icon -->
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="15" cy="9" r="6" />
+                                <path d="M15 3L15 15" stroke-opacity="0.2" />
+                                <path d="M9 9L21 9" stroke-opacity="0.2" />
+                                <path d="M10.8 13.2L4 20" stroke-width="2" />
+                                <path d="M5.5 18.5L3 21" stroke-width="3" />
+                                <path d="M6 6L2 10l3 3 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="hobby-card-title">Badminton</h3>
+                        <p class="hobby-card-desc">
+                            Playing as varsity Captain. Focusing on speed, agility, and tactical control of the court while leading teammates in competitive regional fixtures.
+                        </p>
+                    </div>
+
+                    <div class="hobby-card reveal reveal-delay-2">
+                        <div class="card-border-glow"></div>
+                        <div class="hobby-icon">
+                            <!-- Chess King / Leadership SVG Icon -->
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21H5v-2h14v2zM19 17H5v-2h14v2zM12 5V3M10 4h4M12 15V7M8 12c1.5 0 2.5-1.5 3-3 0.5 1.5 1.5 3 3 3M6 10h12v3H6v-3z" />
+                            </svg>
+                        </div>
+                        <h3 class="hobby-card-title">Chess</h3>
+                        <p class="hobby-card-desc">
+                            Fascinated by high-level board strategy and Blitz formats. Cultivating cognitive focus, pattern analysis, and fast tactical decision-making under time constraints.
+                        </p>
+                    </div>
+
+                    <div class="hobby-card reveal reveal-delay-3">
+                        <div class="card-border-glow"></div>
+                        <div class="hobby-icon">
+                            <!-- Basketball SVG Icon -->
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M6.2 6.2c2.4 2.4 2.4 6.4 0 8.8" />
+                                <path d="M17.8 6.2c-2.4 2.4-2.4 6.4 0 8.8" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <line x1="12" y1="2" x2="12" y2="22" />
+                            </svg>
+                        </div>
+                        <h3 class="hobby-card-title">Basketball</h3>
+                        <p class="hobby-card-desc">
+                            Playing recreational and organized games. Developing court vision, physical endurance, fast-break mechanics, and cohesive team defensive play.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ambition Section -->
+        <section id="ambition" class="section ambition-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-num">03</span>
+                    <h2 class="section-title">Ambition</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="ambition-content reveal">
+                    <div class="ambition-text-wrapper">
+                        <h3 class="ambition-heading">
+                            Building Enterprise & <span class="gold-text-gradient">Artificial Intelligence</span>
+                        </h3>
+                        <p class="ambition-paragraph">
+                            My vision is to bridge the gap between breakthrough research and commercial scale. I aspire to build high-growth businesses centered on new artificial intelligence technologies that solve fundamental real-world challenges.
+                        </p>
+                        <p class="ambition-paragraph">
+                            I believe the future belongs to those who combine business execution with engineering depth. Whether optimizing industrial processes or designing systems that work alongside human intelligence, the goal is to build long-term, impactful technology ventures.
+                        </p>
+                        <div class="ambition-pillars">
+                            <div class="pillar">
+                                <span class="pillar-num">01</span>
+                                <span class="pillar-title">AI System Architecture</span>
+                            </div>
+                            <div class="pillar">
+                                <span class="pillar-num">02</span>
+                                <span class="pillar-title">Global Enterprise Scale</span>
+                            </div>
+                            <div class="pillar">
+                                <span class="pillar-num">03</span>
+                                <span class="pillar-title">High-Performance Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ambition-visual">
+                        <div class="ambition-visual-box">
+                            <span class="vis-accent"></span>
+                            <span class="vis-title">Logic Before Pixels.</span>
+                            <span class="vis-subtitle">Enterprise &times; Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-num">04</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-grid reveal">
+                    <div class="contact-info">
+                        <h3 class="contact-lead-in">Let's build the future together.</h3>
+                        <p class="contact-desc">
+                            If you'd like to talk business, AI, sports leadership, or collaborate on a project, please reach out via email. I will respond to your inquiry as soon as possible.
+                        </p>
+                        <div class="email-copy-box">
+                            <span class="email-label">Preferred Email</span>
+                            <div class="email-action-row">
+                                <span class="email-text" id="email-address">sricharan.pabbati@gmail.com</span>
+                                <button class="btn-copy-email" id="btn-copy" aria-label="Copy email address">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-copy">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-check hidden">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('Message sent (demonstration)!');">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" required placeholder="Alexander Wright">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" required placeholder="alex@company.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" rows="5" required placeholder="Tell me about your project or collaboration idea..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Premium Custom Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; <span id="current-year">2026</span> Sri Charan Pabbati. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#about" class="footer-link">About</a>
+                <a href="#education" class="footer-link">Education</a>
+                <a href="#hobbies" class="footer-link">Hobbies</a>
+                <a href="#ambition" class="footer-link">Ambition</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
