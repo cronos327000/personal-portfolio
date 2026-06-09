@@ -32,9 +32,9 @@
     <div class="custom-cursor-follower"></div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="#" class="logo">S<span class="gold-text">C</span></a>
+            <a href="#about" class="logo" aria-label="Home">S<span class="gold-text">C</span></a>
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -64,8 +64,7 @@
                     Aspiring AI Entrepreneur
                 </p>
                 <p class="hero-description reveal reveal-delay-3">
-                    Currently in Class 11, designing systems at the intersection of business, competitive sports, and
-                    artificial intelligence. Driven by a mindset of logic, high performance, and relentless execution.
+                    Passionate AI enthusiast and high‑school scholar designing innovative solutions.
                 </p>
                 <div class="hero-actions reveal reveal-delay-4">
                     <a href="#contact" class="btn btn-primary">Connect</a>
@@ -229,25 +228,13 @@
                     <h2 class="section-title">Get In Touch</h2>
                     <div class="section-line"></div>
                 </div>
-                <div class="contact-card reveal">
-                    <div class="card-border-glow"></div>
-                    <h3 class="contact-lead-in">Let's build the future together.</h3>
-                    <p class="contact-desc">
-                        If you'd like to talk business, AI, sports leadership, or collaborate on a project, please reach
-                        out via email. I will respond to your inquiry as soon as possible.
-                    </p>
-
-                    <div class="contact-action-container">
-                        <a href="mailto:sricharan.pabbati@gmail.com" class="btn btn-primary contact-btn">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
-                                fill="none" stroke-linecap="round" stroke-linejoin="round" class="email-icon-svg">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            Send Email
-                        </a>
-
+                <div class="contact-grid reveal">
+                    <div class="contact-info">
+                        <h3 class="contact-lead-in">Let's build the future together.</h3>
+                        <p class="contact-desc">
+                            If you'd like to talk business, AI, sports leadership, or collaborate on a project, please
+                            reach out via email. I will respond to your inquiry as soon as possible.
+                        </p>
                         <div class="email-copy-box">
                             <span class="email-label">Preferred Email</span>
                             <div class="email-action-row">
@@ -267,6 +254,27 @@
                                 </button>
                             </div>
                         </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contact-form"
+                            onsubmit="event.preventDefault(); alert('Message sent (demonstration)!');">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" required placeholder="Alexander Wright">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" required placeholder="alex@company.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" rows="5" required
+                                    placeholder="Tell me about your project or collaboration idea..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                        </form>
                     </div>
                 </div>
             </div>
