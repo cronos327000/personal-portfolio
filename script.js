@@ -288,23 +288,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 showToast('Copy Failed. Please copy manually.');
             });
         });
-
-        function showToast(message) {
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.textContent = message;
-
-            toastContainer.appendChild(toast);
-
-            // Remove toast after animation finishes
-            setTimeout(() => {
-                toast.style.animation = 'toast-out 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
-                toast.addEventListener('animationend', () => {
-                    toast.remove();
-                });
-            }, 3000);
-        }
     }
+
 
     // ---------------------------------------------------------
     // 7. FOOTER YEAR UPDATE
@@ -348,4 +333,77 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // ---------------------------------------------------------
+    // 10. CONTACT FORM — EMAILJS INTEGRATION
+    // ---------------------------------------------------------
+    // EmailJS setup: initialise with your Public Key
+    // Replace the values below with your actual EmailJS credentials.
+    // Sign up free at https://www.emailjs.com → get Public Key, Service ID & Template ID
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← replace
+    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // ← replace
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // ← replace
+
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        const submitBtn = contactForm.querySelector('.form-submit');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Guard: check EmailJS is loaded and credentials are set
+            if (typeof emailjs === 'undefined') {
+                showToast('Email service not loaded. Please refresh.');
+                return;
+            }
+            if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+                showToast('Please configure EmailJS credentials in script.js');
+                return;
+            }
+
+            // Loading state on button
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending…';
+            submitBtn.disabled = true;
+
+            const templateParams = {
+                from_name  : document.getElementById('name').value.trim(),
+                from_email : document.getElementById('email').value.trim(),
+                message    : document.getElementById('message').value.trim(),
+                to_email   : 'sricharan.pabbati@gmail.com'
+            };
+
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(() => {
+                    showToast('Message sent successfully!');
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    console.error('EmailJS error:', error);
+                    showToast('Failed to send. Please try again.');
+                })
+                .finally(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+
+    // Make showToast accessible to contact form handler (hoisted above)
+    function showToast(message) {
+        const toastContainer = document.getElementById('toast-container');
+        if (!toastContainer) return;
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.textContent = message;
+        toastContainer.appendChild(toast);
+        setTimeout(() => {
+            toast.style.animation = 'toast-out 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+            toast.addEventListener('animationend', () => toast.remove());
+        }, 3000);
+    }
 });

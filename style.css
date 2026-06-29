@@ -596,6 +596,44 @@ body.hovering-link .custom-cursor-follower {
 /* -------------------------------------------------------------
  * AMBITION SECTION
  * ------------------------------------------------------------- */
+
+/* Force dark text in the Ambition section — the background transitions
+   from dark to light mid-scroll, so we pin the text to readable dark tones
+   regardless of the JS-driven --color-text-primary variable. */
+.ambition-dark-text .section-num,
+.ambition-dark-text .section-title,
+.ambition-dark-text .ambition-heading,
+.ambition-dark-text .ambition-paragraph,
+.ambition-dark-text .pillar-title,
+.ambition-dark-text .vis-title {
+    color: #0e1410 !important;
+    -webkit-text-fill-color: #0e1410 !important;
+}
+
+/* Keep gold gradient on span inside heading */
+.ambition-dark-text .ambition-heading .gold-text-gradient {
+    background: linear-gradient(135deg, #b8920e 0%, #9a7a10 50%, #7a5f0a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text;
+}
+
+/* Secondary text (paragraphs) slightly lighter dark */
+.ambition-dark-text .ambition-paragraph {
+    color: #2a3a30 !important;
+    -webkit-text-fill-color: #2a3a30 !important;
+}
+
+/* Section line stays visible */
+.ambition-dark-text .section-line {
+    background: linear-gradient(90deg, #0e1410, transparent) !important;
+}
+
+/* Pillar borders */
+.ambition-dark-text .pillar {
+    border-bottom-color: rgba(14, 20, 16, 0.2) !important;
+}
+
 .ambition-content {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -1118,10 +1156,19 @@ body.hovering-link .custom-cursor-follower {
     /* ---------- Polished Animations ---------- */
 
     @keyframes bgShift {
-        0% { background-color: var(--color-bg); }
-        50% { background-color: #0a0e0b; }
-        100% { background-color: var(--color-bg); }
+        0% {
+            background-color: var(--color-bg);
+        }
+
+        50% {
+            background-color: #0a0e0b;
+        }
+
+        100% {
+            background-color: var(--color-bg);
+        }
     }
+
     body {
         animation: bgShift 30s ease-in-out infinite;
     }
@@ -1130,6 +1177,7 @@ body.hovering-link .custom-cursor-follower {
         opacity: 0;
         transform: translateY(30px);
     }
+
     .reveal.active {
         opacity: 1;
         transform: none;
@@ -1142,14 +1190,16 @@ body.hovering-link .custom-cursor-follower {
         animation: fadeInUp 1s var(--transition-slow) forwards;
         animation-delay: 0.5s;
     }
+
     @keyframes fadeInUp {
-        to { opacity:1; transform:none; }
+        to {
+            opacity: 1;
+            transform: none;
+        }
     }
 
     .btn-primary:hover,
     .btn-secondary:hover {
         box-shadow: 0 0 20px var(--color-gold-glow);
     }
-}
-
 }
